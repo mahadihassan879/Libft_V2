@@ -273,4 +273,205 @@ Expected output:
 
 ```
 
+## 10. ft_memchr
+
+Test code:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    char str[] = "HELLO";
+    char *result;
+
+    result = ft_memchr(str, 'L', 5);
+    if (result != NULL)
+        printf("Found: %c\n", *result);
+    else
+        printf("Not found\n");
+    return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Found: L
+
+```
+
+Test another case:
+
+Change:
+
+```c
+result = ft_memchr(str, 'L', 5);
+
+```
+
+to:
+
+```c
+result = ft_memchr(str, 'L', 2);
+
+```
+
+Expected output:
+
+```text
+Not found
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_memchr.c -o test
+./test
+
+```
+## 11. ft_memcmp
+
+Test code:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    char s1[] = "CAT";
+    char s2[] = "CAR";
+
+    printf("Result: %d\n", ft_memcmp(s1, s2, 3));
+    printf("Result: %d\n", ft_memcmp("HELLO", "HELLO", 5));
+    printf("Result: %d\n", ft_memcmp("DOG", "DOT", 3));
+    return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Result: 2
+Result: 0
+Result: -13
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_memcmp.c -o test
+./test
+
+```
+## 12. ft_memcpy
+
+Test code:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char src[] = "Hello";
+    char dest[20];
+
+    ft_memcpy(dest, src, 6);
+    printf("Source: %s\n", src);
+    printf("Destination: %s\n", dest);
+
+    return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Source: Hello
+Destination: Hello
+
+```
+## 13. ft_memmove
+
+Test code:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    char str1[] = "Hello";
+    char str2[] = "ABCDE";
+
+    ft_memmove(str1, str1 + 1, 4);
+    printf("Test 1: %s\n", str1);
+
+    ft_memmove(str2 + 1, str2, 4);
+    printf("Test 2: %s\n", str2);
+
+    return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Test 1: ello
+Test 2: AABCD
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_memmove.c -o test
+./test
+
+```
+
+## 14. ft_memset
+
+Test code:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    char str[] = "Hello";
+
+    printf("Before: %s\n", str);
+
+    ft_memset(str, 'X', 3);
+
+    printf("After:  %s\n", str);
+
+    return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Before: Hello
+After:  XXXlo
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_memset.c -o test
+./test
+
+```
+
 **Note:** These snippets go inside `main()`. Include `libft.h` and the required standard headers in `main.c`. Each compilation command assumes you have a separate `main.c` containing only the corresponding test. Keep `main.c` out of your 42 submission.
