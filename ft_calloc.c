@@ -14,16 +14,17 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t number_of_element, size_t size_of_each_elemet)
 {
 	void	*ptr;
 	size_t	total;
 
-	if (size != 0 && nmemb > SIZE_MAX / size)
+	if (size_of_each_elemet != 0 && number_of_element
+		> SIZE_MAX / size_of_each_elemet)
 	{
 		return (NULL);
 	}
-	total = nmemb * size;
+	total = number_of_element * size_of_each_elemet;
 	ptr = malloc(total);
 	if (ptr == NULL)
 	{
