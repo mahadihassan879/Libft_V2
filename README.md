@@ -21,7 +21,7 @@ cc -Wall -Wextra -Werror main.c ft_atoi.c -o test
 -42
 ```
 
----
+------------------------------------------------------------------------
 
 ## 2. ft_bzero
 
@@ -47,7 +47,7 @@ Before: LibftProject
 After: Project
 ```
 
----
+------------------------------------------------------------------------
 
 ## 3. ft_calloc
 
@@ -86,7 +86,7 @@ numbers[3] = 0
 numbers[4] = 0
 ```
 
----
+------------------------------------------------------------------------
 
 ## 4. ft_isalnum
 
@@ -111,7 +111,7 @@ cc -Wall -Wextra -Werror main.c ft_isalnum.c -o test
 0
 ```
 
----
+------------------------------------------------------------------------
 
 Markdown
 ### 5. ft_isalpha
@@ -136,8 +136,8 @@ Plaintext
 1
 0
 0
-
---
+```
+---------------------------------------------------------------------
 ## 6. ft_isascii
 
 Test code:
@@ -169,7 +169,7 @@ Expected output:
 
 ```
 
----
+----------------------------------------------------------------------
 
 ## 7. ft_isdigit
 
@@ -202,7 +202,7 @@ Expected output:
 
 ```
 
----
+----------------------------------------------------------------------
 
 ## 8. ft_isprint
 
@@ -237,7 +237,7 @@ Expected output:
 
 ```
 
----
+----------------------------------------------------------------------
 
 ## 9. ft_itoa
 
@@ -272,6 +272,7 @@ Expected output:
 -2147483648
 
 ```
+---------------------------------------------------------------------------------
 
 ## 10. ft_memchr
 
@@ -332,6 +333,8 @@ cc -Wall -Wextra -Werror ft_memchr.c -o test
 ./test
 
 ```
+-------------------------------------------------------------------
+
 ## 11. ft_memcmp
 
 Test code:
@@ -397,6 +400,8 @@ Source: Hello
 Destination: Hello
 
 ```
+-------------------------------------------------------------------
+
 ## 13. ft_memmove
 
 Test code:
@@ -435,6 +440,8 @@ cc -Wall -Wextra -Werror ft_memmove.c -o test
 ./test
 
 ```
+-------------------------------------------------------------------
+
 
 ## 14. ft_memset
 
@@ -473,5 +480,219 @@ cc -Wall -Wextra -Werror ft_memset.c -o test
 ./test
 
 ```
+-------------------------------------------------------------------
+
+## 15. ft_putchar_fd
+
+Test code:
+
+```c
+#include <unistd.h>
+
+int	main(void)
+{
+	ft_putchar_fd('H', 1);
+	ft_putchar_fd('e', 1);
+	ft_putchar_fd('l', 1);
+	ft_putchar_fd('l', 1);
+	ft_putchar_fd('o', 1);
+	ft_putchar_fd('\n', 1);
+
+	ft_putchar_fd('X', 2);
+	ft_putchar_fd('\n', 2);
+
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Hello
+X
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_putchar_fd.c -o test
+./test
+
+```
+-------------------------------------------------------------------
+
+## 16. ft_putendl_fd
+
+Test code:
+
+```c
+int main(void)
+{
+    ft_putendl_fd("Hello World", 1);
+    ft_putendl_fd("42 Abu Dhabi", 1);
+    ft_putendl_fd("Error message", 2);
+    ft_putendl_fd(NULL, 1);
+    return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Hello World
+42 Abu Dhabi
+Error message
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_putendl_fd.c -o test
+./test
+
+```
+-------------------------------------------------------------------
+
+## ft_putnbr_fd
+
+Test code:
+
+```c
+int main(void)
+{
+    ft_putnbr_fd(123, 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putnbr_fd(-456, 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putnbr_fd(0, 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putnbr_fd(-2147483648, 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putnbr_fd(2147483647, 1);
+    ft_putchar_fd('\n', 1);
+
+    return (0);
+}
+
+```
+
+Expected output:
+
+```text
+123
+-456
+0
+-2147483648
+2147483647
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_putnbr_fd.c ft_putchar_fd.c ft_putstr_fd.c -o test
+./test
+
+```
+-------------------------------------------------------------------
+
+## ft_putstr_fd
+
+Test code:
+
+```c
+int main(void)
+{
+    ft_putstr_fd("Hello 42 Abu Dhabi!", 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putstr_fd("Testing Libft", 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putstr_fd("", 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putstr_fd(NULL, 1);
+
+    return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Hello 42 Abu Dhabi!
+Testing Libft
+
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_putstr_fd.c ft_putchar_fd.c -o test
+./test
+
+Note: Make sure any helper functions used inside ft_putstr_fd (such as ft_strlen.c) are also included in the compilation.
+
+-------------------------------------------------------------------
+```
+## ft_split
+
+Test code:
+
+```c
+int	main(void)
+{
+	char	**result;
+	int		i;
+
+	result = ft_split("  Hello   42 Abu Dhabi  ", ' ');
+	if (!result)
+		return (1);
+	i = 0;
+	while (result[i])
+	{
+		printf("arr[%d] = %s\n", i, result[i]);
+		free(result[i]);
+		i++;
+	}
+	free(result);
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+arr[0] = Hello
+arr[1] = 42
+arr[2] = Abu
+arr[3] = Dhabi
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_split.c ft_substr.c ft_strlen.c ft_strdup.c -o test
+./test
+
+```
+
+*Note: Make sure `<stdio.h>` is included when testing `printf`, and include all helper functions used by `ft_split` and `ft_substr` during compilation.*
+
+
+-------------------------------------------------------------------
 
 **Note:** These snippets go inside `main()`. Include `libft.h` and the required standard headers in `main.c`. Each compilation command assumes you have a separate `main.c` containing only the corresponding test. Keep `main.c` out of your 42 submission.
