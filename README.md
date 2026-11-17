@@ -695,4 +695,218 @@ cc -Wall -Wextra -Werror ft_split.c ft_substr.c ft_strlen.c ft_strdup.c -o test
 
 -------------------------------------------------------------------
 
+তোমার `ft_strchr()` function-এর নিচে এই ছোট `main()` বসাও।
+
+```
+#include <stdio.h>
+#include "libft.h"
+
+int	main(void)
+{
+	char	*result;
+
+	result = ft_strchr("banana", 'a');
+	printf("Expected: anana\n");
+	printf("Actual:   %s\n\n", result);
+
+	result = ft_strchr("banana", 'z');
+	printf("Expected: NULL\n");
+	printf("Actual:   %s\n\n", result ? result : "NULL");
+
+	result = ft_strchr("banana", '\0');
+	printf("Expected: empty string\n");
+	printf("Actual:   %s\n", result);
+
+	return (0);
+}
+```
+
+**Expected output:**
+
+```
+Expected: anana
+Actual:   anana
+
+Expected: NULL
+Actual:   NULL
+
+Expected: empty string
+Actual:
+```
+
+**Compile:**
+
+```
+cc -Wall -Wextra -Werror ft_strchr.c -o test
+./test
+```
+-------------------------------------------------------------
+## ft_strdup
+
+Test code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include "libft.h"
+
+int	main(void)
+{
+	char	*copy;
+
+	copy = ft_strdup("Hello 42");
+	if (!copy)
+		return (1);
+	printf("Original: Hello 42\n");
+	printf("Copy:     %s\n", copy);
+	free(copy);
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Original: Hello 42
+Copy:     Hello 42
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strdup.c ft_strlen.c -o test
+./test
+
+```
+
+*Note: Make sure any helper functions used inside `ft_strdup` (such as `ft_strlen.c` or `ft_memcpy.c`) are included in the compilation.*
+
+--------------------------------------------------------------------------------------------------
+
+## ft_striteri
+
+Test code:
+
+```c
+#include <stdio.h>
+#include "libft.h"
+
+void	make_upper(unsigned int i, char *c)
+{
+	(void)i;
+	if (*c >= 'a' && *c <= 'z')
+		*c = *c - 32;
+}
+
+int	main(void)
+{
+	char	str[] = "hello 42";
+
+	printf("Before: %s\n", str);
+	ft_striteri(str, make_upper);
+	printf("After:  %s\n", str);
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Before: hello 42
+After:  HELLO 42
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_striteri.c -o test
+./test
+
+```
+---------------------------------------------------------------------------
+
+## ft_striteri
+
+Test code:
+
+```c
+#include <stdio.h>
+#include "libft.h"
+
+void	test(unsigned int i, char *c)
+{
+	if (i % 2 == 0)
+		*c = 'X';
+}
+
+int	main(void)
+{
+	char	str[] = "HELLO";
+
+	printf("Before: %s\n", str);
+	ft_striteri(str, test);
+	printf("After:  %s\n", str);
+
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Before: HELLO
+After:  XEXLX
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_striteri.c -o test
+./test
+
+```
+---------------------------------------------------------------
+## ft_strjoin
+
+Test code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include "libft.h"
+
+int	main(void)
+{
+	char	*result;
+
+	result = ft_strjoin("Hello ", "42 Abu Dhabi");
+	if (!result)
+		return (1);
+	printf("Result: %s\n", result);
+	free(result);
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Result: Hello 42 Abu Dhabi
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strjoin.c ft_strlen.c -o test
+./test
+
+``` -------------------------------------------
 **Note:** These snippets go inside `main()`. Include `libft.h` and the required standard headers in `main.c`. Each compilation command assumes you have a separate `main.c` containing only the corresponding test. Keep `main.c` out of your 42 submission.
