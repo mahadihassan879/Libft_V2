@@ -116,6 +116,7 @@ numbers[1] = 0
 numbers[2] = 0
 numbers[3] = 0
 numbers[4] = 0
+<<<<<<< HEAD
 
 ```
 
@@ -191,10 +192,34 @@ int	main(void)
 
 **Expected output:**
 
+=======
+```
+
+------------------------------------------------------------------------
+
+## 4. ft_isalnum
+
+**Test code:**
+```c
+#include <stdio.h>
+
+printf("%d\n", ft_isalnum('A'));
+printf("%d\n", ft_isalnum('5'));
+printf("%d\n", ft_isalnum('@'));
+```
+
+**Compilation:**
+```bash
+cc -Wall -Wextra -Werror main.c ft_isalnum.c -o test
+```
+
+**Expected output:**
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 ```text
 1
 1
 0
+<<<<<<< HEAD
 0
 
 ```
@@ -314,6 +339,126 @@ int	main(void)
 ```
 
 **Expected output:**
+=======
+```
+
+------------------------------------------------------------------------
+
+Markdown
+### 5. ft_isalpha
+
+Test code:
+
+```c
+#include <stdio.h>
+
+printf("%d\n", ft_isalpha('A'));
+printf("%d\n", ft_isalpha('z'));
+printf("%d\n", ft_isalpha('5'));
+printf("%d\n", ft_isalpha('@'));
+Compilation:
+
+Bash
+cc -Wall -Wextra -Werror main.c ft_isalpha.c -o test
+Expected output:
+
+Plaintext
+1
+1
+0
+0
+```
+---------------------------------------------------------------------
+## 6. ft_isascii
+
+Test code:
+
+```c
+#include <stdio.h>
+
+printf("%d\n", ft_isascii('A'));
+printf("%d\n", ft_isascii('5'));
+printf("%d\n", ft_isascii(127));
+printf("%d\n", ft_isascii(128));
+
+```
+
+Compilation:
+
+```bash
+cc -Wall -Wextra -Werror main.c ft_isascii.c -o test
+
+```
+
+Expected output:
+
+```text
+1
+1
+1
+0
+
+```
+
+----------------------------------------------------------------------
+
+## 7. ft_isdigit
+
+Test code:
+
+```c
+#include <stdio.h>
+
+printf("%d\n", ft_isdigit('5'));
+printf("%d\n", ft_isdigit('0'));
+printf("%d\n", ft_isdigit('A'));
+printf("%d\n", ft_isdigit('@'));
+
+```
+
+Compilation:
+
+```bash
+cc -Wall -Wextra -Werror main.c ft_isdigit.c -o test
+
+```
+
+Expected output:
+
+```text
+1
+1
+0
+0
+
+```
+
+----------------------------------------------------------------------
+
+## 8. ft_isprint
+
+Test code:
+
+```c
+#include <stdio.h>
+
+printf("%d\n", ft_isprint('A'));
+printf("%d\n", ft_isprint(' '));
+printf("%d\n", ft_isprint('5'));
+printf("%d\n", ft_isprint(31));
+printf("%d\n", ft_isprint(127));
+
+```
+
+Compilation:
+
+```bash
+cc -Wall -Wextra -Werror main.c ft_isprint.c -o test
+
+```
+
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 1
@@ -324,6 +469,7 @@ int	main(void)
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -339,10 +485,18 @@ cc -Wall -Wextra -Werror main.c ft_isprint.c -o test
 Converts a whole number (`int`) into a newly allocated text string. It handles negative signs and edge cases like `-2147483648`.
 
 **Test code:**
+=======
+----------------------------------------------------------------------
+
+## 9. ft_itoa
+
+Test code:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```c
 #include <stdio.h>
 #include <stdlib.h>
+<<<<<<< HEAD
 #include "libft.h"
 
 int	main(void)
@@ -358,6 +512,25 @@ int	main(void)
 ```
 
 **Expected output:**
+=======
+
+printf("%s\n", ft_itoa(42));
+printf("%s\n", ft_itoa(-123));
+printf("%s\n", ft_itoa(0));
+printf("%s\n", ft_itoa(2147483647));
+printf("%s\n", ft_itoa(-2147483648));
+
+```
+
+Compilation:
+
+```bash
+cc -Wall -Wextra -Werror main.c ft_itoa.c -o test
+
+```
+
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 42
@@ -367,6 +540,7 @@ int	main(void)
 -2147483648
 
 ```
+<<<<<<< HEAD
 
 **Compile and run:**
 
@@ -404,18 +578,70 @@ int	main(void)
 	else
 		printf("Not found\n");
 	return (0);
+=======
+---------------------------------------------------------------------------------
+
+## 10. ft_memchr
+
+Test code:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    char str[] = "HELLO";
+    char *result;
+
+    result = ft_memchr(str, 'L', 5);
+    if (result != NULL)
+        printf("Found: %c\n", *result);
+    else
+        printf("Not found\n");
+    return (0);
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 }
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
 
 ```text
 Found: L
+=======
+Expected output:
+
+```text
+Found: L
+
+```
+
+Test another case:
+
+Change:
+
+```c
+result = ft_memchr(str, 'L', 5);
+
+```
+
+to:
+
+```c
+result = ft_memchr(str, 'L', 2);
+
+```
+
+Expected output:
+
+```text
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 Not found
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -445,11 +671,42 @@ int	main(void)
 	printf("Result: %d\n", ft_memcmp("HELLO", "HELLO", 5));
 	printf("Result: %d\n", ft_memcmp("DOG", "DOT", 3));
 	return (0);
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_memchr.c -o test
+./test
+
+```
+-------------------------------------------------------------------
+
+## 11. ft_memcmp
+
+Test code:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    char s1[] = "CAT";
+    char s2[] = "CAR";
+
+    printf("Result: %d\n", ft_memcmp(s1, s2, 3));
+    printf("Result: %d\n", ft_memcmp("HELLO", "HELLO", 5));
+    printf("Result: %d\n", ft_memcmp("DOG", "DOT", 3));
+    return (0);
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 }
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Result: 2
@@ -458,6 +715,7 @@ Result: -13
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -487,17 +745,49 @@ int	main(void)
 	printf("Source: %s\n", src);
 	printf("Destination: %s\n", dest);
 	return (0);
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_memcmp.c -o test
+./test
+
+```
+## 12. ft_memcpy
+
+Test code:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char src[] = "Hello";
+    char dest[20];
+
+    ft_memcpy(dest, src, 6);
+    printf("Source: %s\n", src);
+    printf("Destination: %s\n", dest);
+
+    return (0);
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 }
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Source: Hello
 Destination: Hello
 
 ```
+<<<<<<< HEAD
 
 **Compile and run:**
 
@@ -529,11 +819,38 @@ int	main(void)
 	ft_memmove(str2 + 1, str2, 4);
 	printf("Test 2: %s\n", str2);
 	return (0);
+=======
+-------------------------------------------------------------------
+
+## 13. ft_memmove
+
+Test code:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    char str1[] = "Hello";
+    char str2[] = "ABCDE";
+
+    ft_memmove(str1, str1 + 1, 4);
+    printf("Test 1: %s\n", str1);
+
+    ft_memmove(str2 + 1, str2, 4);
+    printf("Test 2: %s\n", str2);
+
+    return (0);
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 }
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Test 1: ello
@@ -541,6 +858,7 @@ Test 2: AABCD
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -569,11 +887,45 @@ int	main(void)
 	ft_memset(str, 'X', 3);
 	printf("After:  %s\n", str);
 	return (0);
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_memmove.c -o test
+./test
+
+```
+-------------------------------------------------------------------
+
+
+## 14. ft_memset
+
+Test code:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    char str[] = "Hello";
+
+    printf("Before: %s\n", str);
+
+    ft_memset(str, 'X', 3);
+
+    printf("After:  %s\n", str);
+
+    return (0);
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 }
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Before: Hello
@@ -581,6 +933,7 @@ After:  XXXlo
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -599,6 +952,23 @@ Writes a single character to the given file descriptor (`1` for standard output,
 
 ```c
 #include "libft.h"
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_memset.c -o test
+./test
+
+```
+-------------------------------------------------------------------
+
+## 15. ft_putchar_fd
+
+Test code:
+
+```c
+#include <unistd.h>
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 int	main(void)
 {
@@ -608,14 +978,25 @@ int	main(void)
 	ft_putchar_fd('l', 1);
 	ft_putchar_fd('o', 1);
 	ft_putchar_fd('\n', 1);
+<<<<<<< HEAD
 	ft_putchar_fd('X', 2);
 	ft_putchar_fd('\n', 2);
+=======
+
+	ft_putchar_fd('X', 2);
+	ft_putchar_fd('\n', 2);
+
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 	return (0);
 }
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Hello
@@ -623,6 +1004,7 @@ X
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -649,11 +1031,38 @@ int	main(void)
 	ft_putendl_fd("Error message", 2);
 	ft_putendl_fd(NULL, 1);
 	return (0);
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_putchar_fd.c -o test
+./test
+
+```
+-------------------------------------------------------------------
+
+## 16. ft_putendl_fd
+
+Test code:
+
+```c
+int main(void)
+{
+    ft_putendl_fd("Hello World", 1);
+    ft_putendl_fd("42 Abu Dhabi", 1);
+    ft_putendl_fd("Error message", 2);
+    ft_putendl_fd(NULL, 1);
+    return (0);
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 }
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Hello World
@@ -662,6 +1071,7 @@ Error message
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -694,11 +1104,49 @@ int	main(void)
 	ft_putnbr_fd(2147483647, 1);
 	ft_putchar_fd('\n', 1);
 	return (0);
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_putendl_fd.c -o test
+./test
+
+```
+-------------------------------------------------------------------
+
+## ft_putnbr_fd
+
+Test code:
+
+```c
+int main(void)
+{
+    ft_putnbr_fd(123, 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putnbr_fd(-456, 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putnbr_fd(0, 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putnbr_fd(-2147483648, 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putnbr_fd(2147483647, 1);
+    ft_putchar_fd('\n', 1);
+
+    return (0);
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 }
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 123
@@ -709,6 +1157,7 @@ int	main(void)
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -738,11 +1187,45 @@ int	main(void)
 	ft_putchar_fd('\n', 1);
 	ft_putstr_fd(NULL, 1);
 	return (0);
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_putnbr_fd.c ft_putchar_fd.c ft_putstr_fd.c -o test
+./test
+
+```
+-------------------------------------------------------------------
+
+## ft_putstr_fd
+
+Test code:
+
+```c
+int main(void)
+{
+    ft_putstr_fd("Hello 42 Abu Dhabi!", 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putstr_fd("Testing Libft", 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putstr_fd("", 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putstr_fd(NULL, 1);
+
+    return (0);
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 }
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Hello 42 Abu Dhabi!
@@ -751,6 +1234,7 @@ Testing Libft
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -772,6 +1256,23 @@ Splits a string into an array of smaller strings wherever a chosen delimiter cha
 #include <stdlib.h>
 #include "libft.h"
 
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_putstr_fd.c ft_putchar_fd.c -o test
+./test
+
+Note: Make sure any helper functions used inside ft_putstr_fd (such as ft_strlen.c) are also included in the compilation.
+
+-------------------------------------------------------------------
+```
+## ft_split
+
+Test code:
+
+```c
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 int	main(void)
 {
 	char	**result;
@@ -793,7 +1294,11 @@ int	main(void)
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 arr[0] = Hello
@@ -803,14 +1308,22 @@ arr[3] = Dhabi
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
 cc -Wall -Wextra -Werror main.c ft_split.c ft_substr.c ft_strlen.c ft_strdup.c -o test
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_split.c ft_substr.c ft_strlen.c ft_strdup.c -o test
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 ./test
 
 ```
 
+<<<<<<< HEAD
 ---
 
 ## 20. ft_strchr
@@ -820,6 +1333,16 @@ Scans a string from left to right to find the first match of character `c`. It r
 **Test code:**
 
 ```c
+=======
+*Note: Make sure `<stdio.h>` is included when testing `printf`, and include all helper functions used by `ft_split` and `ft_substr` during compilation.*
+
+
+-------------------------------------------------------------------
+
+তোমার `ft_strchr()` function-এর নিচে এই ছোট `main()` বসাও।
+
+```
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 #include <stdio.h>
 #include "libft.h"
 
@@ -830,6 +1353,7 @@ int	main(void)
 	result = ft_strchr("banana", 'a');
 	printf("Expected: anana\n");
 	printf("Actual:   %s\n\n", result);
+<<<<<<< HEAD
 	result = ft_strchr("banana", 'z');
 	printf("Expected: NULL\n");
 	printf("Actual:   %s\n\n", result ? result : "NULL");
@@ -839,11 +1363,28 @@ int	main(void)
 	return (0);
 }
 
+=======
+
+	result = ft_strchr("banana", 'z');
+	printf("Expected: NULL\n");
+	printf("Actual:   %s\n\n", result ? result : "NULL");
+
+	result = ft_strchr("banana", '\0');
+	printf("Expected: empty string\n");
+	printf("Actual:   %s\n", result);
+
+	return (0);
+}
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 ```
 
 **Expected output:**
 
+<<<<<<< HEAD
 ```text
+=======
+```
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 Expected: anana
 Actual:   anana
 
@@ -851,6 +1392,7 @@ Expected: NULL
 Actual:   NULL
 
 Expected: empty string
+<<<<<<< HEAD
 Actual:   
 
 ```
@@ -870,6 +1412,21 @@ cc -Wall -Wextra -Werror main.c ft_strchr.c -o test
 Creates an exact duplicate of a string in newly allocated memory. Remember to `free` the returned pointer when you are done with it.
 
 **Test code:**
+=======
+Actual:
+```
+
+**Compile:**
+
+```
+cc -Wall -Wextra -Werror ft_strchr.c -o test
+./test
+```
+-------------------------------------------------------------
+## ft_strdup
+
+Test code:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```c
 #include <stdio.h>
@@ -891,7 +1448,11 @@ int	main(void)
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Original: Hello 42
@@ -899,14 +1460,22 @@ Copy:     Hello 42
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
 cc -Wall -Wextra -Werror main.c ft_strdup.c ft_strlen.c -o test
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strdup.c ft_strlen.c -o test
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 ./test
 
 ```
 
+<<<<<<< HEAD
 ---
 
 ## 22. ft_striteri
@@ -914,6 +1483,15 @@ cc -Wall -Wextra -Werror main.c ft_strdup.c ft_strlen.c -o test
 Applies a custom function `f` to every character in a string, passing each character's index and memory address. This modifies the original string directly in place.
 
 **Test code:**
+=======
+*Note: Make sure any helper functions used inside `ft_strdup` (such as `ft_strlen.c` or `ft_memcpy.c`) are included in the compilation.*
+
+--------------------------------------------------------------------------------------------------
+
+## ft_striteri
+
+Test code:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```c
 #include <stdio.h>
@@ -938,7 +1516,11 @@ int	main(void)
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Before: hello 42
@@ -946,6 +1528,7 @@ After:  HELLO 42
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -961,6 +1544,63 @@ cc -Wall -Wextra -Werror main.c ft_striteri.c -o test
 Allocates memory and joins two strings (`s1` followed by `s2`) into one new string. Both original strings stay unchanged.
 
 **Test code:**
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_striteri.c -o test
+./test
+
+```
+---------------------------------------------------------------------------
+
+## ft_striteri
+
+Test code:
+
+```c
+#include <stdio.h>
+#include "libft.h"
+
+void	test(unsigned int i, char *c)
+{
+	if (i % 2 == 0)
+		*c = 'X';
+}
+
+int	main(void)
+{
+	char	str[] = "HELLO";
+
+	printf("Before: %s\n", str);
+	ft_striteri(str, test);
+	printf("After:  %s\n", str);
+
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Before: HELLO
+After:  XEXLX
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_striteri.c -o test
+./test
+
+```
+---------------------------------------------------------------
+## ft_strjoin
+
+Test code:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```c
 #include <stdio.h>
@@ -981,13 +1621,18 @@ int	main(void)
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Result: Hello 42 Abu Dhabi
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -1003,6 +1648,18 @@ cc -Wall -Wextra -Werror main.c ft_strjoin.c ft_strlen.c -o test
 Safely appends `src` to the end of `dst` without exceeding the total buffer size `dstsize`. It always ends the result with `\0` and returns the total length it tried to create.
 
 **Test code:**
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strjoin.c ft_strlen.c -o test
+./test
+
+``` -------------------------------------------
+## ft_strlcat
+
+Test code:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```c
 #include <stdio.h>
@@ -1014,14 +1671,25 @@ int	main(void)
 	size_t	result;
 
 	result = ft_strlcat(dst, "42", sizeof(dst));
+<<<<<<< HEAD
 	printf("Result: %s\n", dst);
 	printf("Return: %zu\n", result);
+=======
+
+	printf("Result: %s\n", dst);
+	printf("Return: %zu\n", result);
+
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 	return (0);
 }
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Result: Hello 42
@@ -1029,6 +1697,7 @@ Return: 8
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -1044,6 +1713,20 @@ cc -Wall -Wextra -Werror main.c ft_strlcat.c ft_strlen.c -o test
 Safely copies up to `dstsize - 1` characters from `src` into `dst` and always adds `\0` at the end. It returns the full length of `src` so you can check if the text was cut short.
 
 **Test code:**
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strlcat.c ft_strlen.c -o test
+./test
+
+```
+-----------------------------------------------------------
+
+## ft_strlcpy
+
+Test code:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```c
 #include <stdio.h>
@@ -1055,14 +1738,25 @@ int	main(void)
 	size_t	result;
 
 	result = ft_strlcpy(dst, "HELLO", sizeof(dst));
+<<<<<<< HEAD
 	printf("Destination: %s\n", dst);
 	printf("Return: %zu\n", result);
+=======
+
+	printf("Destination: %s\n", dst);
+	printf("Return: %zu\n", result);
+
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 	return (0);
 }
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Destination: HELL
@@ -1070,6 +1764,7 @@ Return: 5
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -1085,6 +1780,19 @@ cc -Wall -Wextra -Werror main.c ft_strlcpy.c -o test
 Counts and returns the number of characters in a string before the ending `\0` byte. It does not count the `\0` itself.
 
 **Test code:**
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strlcpy.c -o test
+./test
+
+```
+------------------------------------------------
+## ft_strlen
+
+Test code:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```c
 #include <stdio.h>
@@ -1100,7 +1808,11 @@ int	main(void)
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Expected: 5 | Actual: 5
@@ -1109,6 +1821,7 @@ Expected: 0 | Actual: 0
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -1124,6 +1837,19 @@ cc -Wall -Wextra -Werror main.c ft_strlen.c -o test
 Applies a function `f` to every character of a string and saves the results in a newly allocated string. Unlike `ft_striteri`, it leaves the original string untouched.
 
 **Test code:**
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strlen.c -o test
+./test
+
+```
+-------------------------------------------------------
+## ft_strmapi
+
+Test code:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```c
 #include <stdio.h>
@@ -1153,7 +1879,11 @@ int	main(void)
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Original: hello
@@ -1161,6 +1891,7 @@ Result:   HELLO
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -1176,6 +1907,20 @@ cc -Wall -Wextra -Werror main.c ft_strmapi.c ft_strlen.c -o test
 Compares up to `n` characters of two strings. It returns `0` if they are identical within that limit, or the ASCII difference at the first mismatch.
 
 **Test code:**
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strmapi.c ft_strlen.c -o test
+./test
+
+```
+------------------------------------
+
+## ft_strncmp
+
+Test code:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```c
 #include <stdio.h>
@@ -1187,12 +1932,20 @@ int	main(void)
 	printf("Test 2: %d\n", ft_strncmp("CAT", "CAR", 3));
 	printf("Test 3: %d\n", ft_strncmp("CAT", "DOG", 0));
 	printf("Test 4: %d\n", ft_strncmp("ABC", "ABD", 2));
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 	return (0);
 }
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Test 1: 0
@@ -1202,14 +1955,22 @@ Test 4: 0
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
 cc -Wall -Wextra -Werror main.c ft_strncmp.c -o test
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strncmp.c -o test
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 ./test
 
 ```
 
+<<<<<<< HEAD
 ---
 
 ## 29. ft_strnstr
@@ -1217,6 +1978,12 @@ cc -Wall -Wextra -Werror main.c ft_strncmp.c -o test
 Searches for the small string `needle` inside `haystack`, checking at most `len` characters. It returns a pointer to the start of the match, or `NULL` if it is not found within `len`.
 
 **Test code:**
+=======
+------------------------------------------------------
+## ft_strnstr
+
+Test code:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```c
 #include <stdio.h>
@@ -1228,18 +1995,35 @@ int	main(void)
 
 	result = ft_strnstr("Hello World", "World", 11);
 	printf("Test 1: %s\n", result ? result : "NULL");
+<<<<<<< HEAD
 	result = ft_strnstr("Hello World", "World", 5);
 	printf("Test 2: %s\n", result ? result : "NULL");
 	result = ft_strnstr("Hello World", "", 5);
 	printf("Test 3: %s\n", result ? result : "NULL");
 	result = ft_strnstr("Hello World", "Cat", 11);
 	printf("Test 4: %s\n", result ? result : "NULL");
+=======
+
+	result = ft_strnstr("Hello World", "World", 5);
+	printf("Test 2: %s\n", result ? result : "NULL");
+
+	result = ft_strnstr("Hello World", "", 5);
+	printf("Test 3: %s\n", result ? result : "NULL");
+
+	result = ft_strnstr("Hello World", "Cat", 11);
+	printf("Test 4: %s\n", result ? result : "NULL");
+
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 	return (0);
 }
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Test 1: World
@@ -1249,6 +2033,7 @@ Test 4: NULL
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -1264,6 +2049,19 @@ cc -Wall -Wextra -Werror main.c ft_strnstr.c -o test
 Searches a string for the **last** occurrence of character `c`. It returns a pointer to that final match, or `NULL` if the character does not appear.
 
 **Test code:**
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strnstr.c -o test
+./test
+
+```
+--------------------------------------------------------
+## ft_strrchr
+
+Test code:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```c
 #include <stdio.h>
@@ -1276,18 +2074,34 @@ int	main(void)
 	result = ft_strrchr("banana", 'a');
 	printf("Expected: a\n");
 	printf("Actual:   %s\n\n", result);
+<<<<<<< HEAD
 	result = ft_strrchr("banana", 'n');
 	printf("Expected: na\n");
 	printf("Actual:   %s\n\n", result);
 	result = ft_strrchr("banana", 'z');
 	printf("Expected: NULL\n");
 	printf("Actual:   %s\n", result ? result : "NULL");
+=======
+
+	result = ft_strrchr("banana", 'n');
+	printf("Expected: na\n");
+	printf("Actual:   %s\n\n", result);
+
+	result = ft_strrchr("banana", 'z');
+	printf("Expected: NULL\n");
+	printf("Actual:   %s\n", result ? result : "NULL");
+
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 	return (0);
 }
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Expected: a
@@ -1301,6 +2115,7 @@ Actual:   NULL
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -1316,6 +2131,19 @@ cc -Wall -Wextra -Werror main.c ft_strrchr.c -o test
 Removes all characters listed in `set` from both the beginning and the end of string `s1`. It returns a newly allocated copy of the cleaned string.
 
 **Test code:**
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strrchr.c -o test
+./test
+
+```
+-------------------------------------------------
+## ft_strtrim
+
+Test code:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```c
 #include <stdio.h>
@@ -1336,13 +2164,18 @@ int	main(void)
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Result: 'Hello 42 Abu Dhabi!'
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -1358,6 +2191,19 @@ cc -Wall -Wextra -Werror main.c ft_strtrim.c ft_strchr.c ft_strlen.c ft_strlcpy.
 Extracts a smaller piece of text from string `s`, starting at index `start` with a maximum length of `len`. The extracted piece is returned in newly allocated memory.
 
 **Test code:**
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strtrim.c ft_strchr.c ft_strlen.c ft_strlcpy.c -o test
+./test
+
+```
+---------------------------------------------------------------
+## ft_substr
+
+Test code:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```c
 #include <stdio.h>
@@ -1378,13 +2224,18 @@ int	main(void)
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Result: '42 Abu Dhabi'
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -1400,6 +2251,19 @@ cc -Wall -Wextra -Werror main.c ft_substr.c ft_strlen.c ft_strdup.c -o test
 Converts an uppercase letter (`'A'` to `'Z'`) into its lowercase version (`'a'` to `'z'`). Non-uppercase characters are returned unchanged.
 
 **Test code:**
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_substr.c ft_strlen.c ft_strdup.c -o test
+./test
+
+```
+-----------------------------------------------------------------
+## ft_tolower
+
+Test code:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```c
 #include <stdio.h>
@@ -1416,7 +2280,11 @@ int	main(void)
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Input 'A': a
@@ -1426,6 +2294,7 @@ Input '5': 5
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -1441,6 +2310,20 @@ cc -Wall -Wextra -Werror main.c ft_tolower.c -o test
 Converts a lowercase letter (`'a'` to `'z'`) into its uppercase version (`'A'` to `'Z'`). Non-lowercase characters are returned unchanged.
 
 **Test code:**
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_tolower.c -o test
+./test
+
+```
+--------------------------------------------------
+
+## ft_toupper
+
+Test code:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```c
 #include <stdio.h>
@@ -1457,7 +2340,11 @@ int	main(void)
 
 ```
 
+<<<<<<< HEAD
 **Expected output:**
+=======
+Expected output:
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
 
 ```text
 Input 'a': A
@@ -1467,6 +2354,7 @@ Input '5': 5
 
 ```
 
+<<<<<<< HEAD
 **Compile and run:**
 
 ```bash
@@ -1478,3 +2366,14 @@ cc -Wall -Wextra -Werror main.c ft_toupper.c -o test
 ---
 
 **Note:** Each compilation command assumes you have a separate `main.c` containing only the corresponding test. Keep `main.c` and the `test` binary out of your 42 submission.
+=======
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_toupper.c -o test
+./test
+
+```
+---------------------------------------------------------
+**Note:** These snippets go inside `main()`. Include `libft.h` and the required standard headers in `main.c`. Each compilation command assumes you have a separate `main.c` containing only the corresponding test. Keep `main.c` out of your 42 submission.
+>>>>>>> 0c3e89c1a133c5dd16de7879339f974d35e106b1
