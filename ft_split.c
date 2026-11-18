@@ -11,12 +11,12 @@
 /* ************************************************************************** */
 
 #include "libft.h"
- 
+
 static int	count_words(const char *s, char character)
 {
 	int	count;
 	int	i;
- 
+
 	count = 0;
 	i = 0;
 	while (s[i] != '\0')
@@ -27,7 +27,7 @@ static int	count_words(const char *s, char character)
 	}
 	return (count);
 }
- 
+
 static void	free_array(char **arr, int i)
 {
 	while (i > 0)
@@ -37,13 +37,13 @@ static void	free_array(char **arr, int i)
 	}
 	free(arr);
 }
- 
+
 static char	*allocate_word(const char *s, char c, int *index)
 {
 	char	*word;
 	int		start;
 	int		len;
- 
+
 	start = *index;
 	len = 0;
 	while (s[*index] && s[*index] != c)
@@ -54,12 +54,12 @@ static char	*allocate_word(const char *s, char c, int *index)
 	word = ft_substr(s, start, len);
 	return (word);
 }
- 
+
 static char	**fill_array(char **arr, const char *s, char c, int words)
 {
 	int	i;
 	int	j;
- 
+
 	i = 0;
 	j = 0;
 	while (j < words)
@@ -77,12 +77,12 @@ static char	**fill_array(char **arr, const char *s, char c, int words)
 	arr[j] = NULL;
 	return (arr);
 }
- 
+
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 	int		words;
- 
+
 	if (!s)
 		return (NULL);
 	words = count_words(s, c);
@@ -91,4 +91,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (fill_array(arr, s, c, words));
 }
- 

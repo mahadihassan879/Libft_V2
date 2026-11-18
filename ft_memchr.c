@@ -12,7 +12,8 @@
 
 #include "libft.h"
 
-void	*ft_memchr(const void *start_search, int charcter, size_t number_of_byte_search)
+void	*ft_memchr(const void *start_search, int charcter,
+	size_t number_of_byte_search)
 {
 	const unsigned char	*p;
 	size_t				i;

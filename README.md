@@ -1209,4 +1209,155 @@ cc -Wall -Wextra -Werror ft_strrchr.c -o test
 
 ```
 -------------------------------------------------
+## ft_strtrim
+
+Test code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include "libft.h"
+
+int	main(void)
+{
+	char	*trimmed;
+
+	trimmed = ft_strtrim("  \t\nHello 42 Abu Dhabi!\n\t  ", " \t\n");
+	if (!trimmed)
+		return (1);
+	printf("Result: '%s'\n", trimmed);
+	free(trimmed);
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Result: 'Hello 42 Abu Dhabi!'
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strtrim.c ft_strchr.c ft_strlen.c ft_strlcpy.c -o test
+./test
+
+```
+---------------------------------------------------------------
+## ft_substr
+
+Test code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include "libft.h"
+
+int	main(void)
+{
+	char	*sub;
+
+	sub = ft_substr("Hello 42 Abu Dhabi!", 6, 12);
+	if (!sub)
+		return (1);
+	printf("Result: '%s'\n", sub);
+	free(sub);
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Result: '42 Abu Dhabi'
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_substr.c ft_strlen.c ft_strdup.c -o test
+./test
+
+```
+-----------------------------------------------------------------
+## ft_tolower
+
+Test code:
+
+```c
+#include <stdio.h>
+#include "libft.h"
+
+int	main(void)
+{
+	printf("Input 'A': %c\n", ft_tolower('A'));
+	printf("Input 'Z': %c\n", ft_tolower('Z'));
+	printf("Input 'm': %c\n", ft_tolower('m'));
+	printf("Input '5': %c\n", ft_tolower('5'));
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Input 'A': a
+Input 'Z': z
+Input 'm': m
+Input '5': 5
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_tolower.c -o test
+./test
+
+```
+--------------------------------------------------
+
+## ft_toupper
+
+Test code:
+
+```c
+#include <stdio.h>
+#include "libft.h"
+
+int	main(void)
+{
+	printf("Input 'a': %c\n", ft_toupper('a'));
+	printf("Input 'z': %c\n", ft_toupper('z'));
+	printf("Input 'M': %c\n", ft_toupper('M'));
+	printf("Input '5': %c\n", ft_toupper('5'));
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Input 'a': A
+Input 'z': Z
+Input 'M': M
+Input '5': 5
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_toupper.c -o test
+./test
+
+```
+---------------------------------------------------------
 **Note:** These snippets go inside `main()`. Include `libft.h` and the required standard headers in `main.c`. Each compilation command assumes you have a separate `main.c` containing only the corresponding test. Keep `main.c` out of your 42 submission.
