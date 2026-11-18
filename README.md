@@ -909,4 +909,304 @@ cc -Wall -Wextra -Werror ft_strjoin.c ft_strlen.c -o test
 ./test
 
 ``` -------------------------------------------
+## ft_strlcat
+
+Test code:
+
+```c
+#include <stdio.h>
+#include "libft.h"
+
+int	main(void)
+{
+	char	dst[20] = "Hello ";
+	size_t	result;
+
+	result = ft_strlcat(dst, "42", sizeof(dst));
+
+	printf("Result: %s\n", dst);
+	printf("Return: %zu\n", result);
+
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Result: Hello 42
+Return: 8
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strlcat.c ft_strlen.c -o test
+./test
+
+```
+-----------------------------------------------------------
+
+## ft_strlcpy
+
+Test code:
+
+```c
+#include <stdio.h>
+#include "libft.h"
+
+int	main(void)
+{
+	char	dst[5];
+	size_t	result;
+
+	result = ft_strlcpy(dst, "HELLO", sizeof(dst));
+
+	printf("Destination: %s\n", dst);
+	printf("Return: %zu\n", result);
+
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Destination: HELL
+Return: 5
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strlcpy.c -o test
+./test
+
+```
+------------------------------------------------
+## ft_strlen
+
+Test code:
+
+```c
+#include <stdio.h>
+#include "libft.h"
+
+int	main(void)
+{
+	printf("Expected: 5 | Actual: %zu\n", ft_strlen("HELLO"));
+	printf("Expected: 3 | Actual: %zu\n", ft_strlen("CAT"));
+	printf("Expected: 0 | Actual: %zu\n", ft_strlen(""));
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Expected: 5 | Actual: 5
+Expected: 3 | Actual: 3
+Expected: 0 | Actual: 0
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strlen.c -o test
+./test
+
+```
+-------------------------------------------------------
+## ft_strmapi
+
+Test code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include "libft.h"
+
+char	make_upper(unsigned int i, char c)
+{
+	(void)i;
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
+}
+
+int	main(void)
+{
+	char	*result;
+
+	result = ft_strmapi("hello", make_upper);
+	if (!result)
+		return (1);
+	printf("Original: hello\n");
+	printf("Result:   %s\n", result);
+	free(result);
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Original: hello
+Result:   HELLO
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strmapi.c ft_strlen.c -o test
+./test
+
+```
+------------------------------------
+
+## ft_strncmp
+
+Test code:
+
+```c
+#include <stdio.h>
+#include "libft.h"
+
+int	main(void)
+{
+	printf("Test 1: %d\n", ft_strncmp("Hello", "Hello", 5));
+	printf("Test 2: %d\n", ft_strncmp("CAT", "CAR", 3));
+	printf("Test 3: %d\n", ft_strncmp("CAT", "DOG", 0));
+	printf("Test 4: %d\n", ft_strncmp("ABC", "ABD", 2));
+
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Test 1: 0
+Test 2: 2
+Test 3: 0
+Test 4: 0
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strncmp.c -o test
+./test
+
+```
+
+------------------------------------------------------
+## ft_strnstr
+
+Test code:
+
+```c
+#include <stdio.h>
+#include "libft.h"
+
+int	main(void)
+{
+	char	*result;
+
+	result = ft_strnstr("Hello World", "World", 11);
+	printf("Test 1: %s\n", result ? result : "NULL");
+
+	result = ft_strnstr("Hello World", "World", 5);
+	printf("Test 2: %s\n", result ? result : "NULL");
+
+	result = ft_strnstr("Hello World", "", 5);
+	printf("Test 3: %s\n", result ? result : "NULL");
+
+	result = ft_strnstr("Hello World", "Cat", 11);
+	printf("Test 4: %s\n", result ? result : "NULL");
+
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Test 1: World
+Test 2: NULL
+Test 3: Hello World
+Test 4: NULL
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strnstr.c -o test
+./test
+
+```
+--------------------------------------------------------
+## ft_strrchr
+
+Test code:
+
+```c
+#include <stdio.h>
+#include "libft.h"
+
+int	main(void)
+{
+	char	*result;
+
+	result = ft_strrchr("banana", 'a');
+	printf("Expected: a\n");
+	printf("Actual:   %s\n\n", result);
+
+	result = ft_strrchr("banana", 'n');
+	printf("Expected: na\n");
+	printf("Actual:   %s\n\n", result);
+
+	result = ft_strrchr("banana", 'z');
+	printf("Expected: NULL\n");
+	printf("Actual:   %s\n", result ? result : "NULL");
+
+	return (0);
+}
+
+```
+
+Expected output:
+
+```text
+Expected: a
+Actual:   a
+
+Expected: na
+Actual:   na
+
+Expected: NULL
+Actual:   NULL
+
+```
+
+Compile and run:
+
+```bash
+cc -Wall -Wextra -Werror ft_strrchr.c -o test
+./test
+
+```
+-------------------------------------------------
 **Note:** These snippets go inside `main()`. Include `libft.h` and the required standard headers in `main.c`. Each compilation command assumes you have a separate `main.c` containing only the corresponding test. Keep `main.c` out of your 42 submission.
